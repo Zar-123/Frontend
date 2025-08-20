@@ -1,0 +1,375 @@
+Perfecto, aquí tienes una **guía clara y ordenada** para configurar Git con GitHub desde cero, usando el navegador para iniciar sesión (con “Sign in with your browser”) y autenticación mediante el **Administrador de credenciales de Windows**. Ideal para asegurarte de que todo quede bien configurado desde el principio. ✅
+
+---
+
+# 🛠️ GUÍA COMPLETA: Configurar Git con GitHub en Windows
+
+---
+
+## ✅ PASO 1: Limpiar credenciales anteriores (si las hay)
+
+1. Abre el **Administrador de credenciales de Windows**:
+
+   * Pulsa `Inicio` y escribe: `Administrador de credenciales`
+   * Abre la aplicación.
+
+2. Entra a **“Credenciales de Windows”**.
+
+3. Busca y **elimina cualquier entrada relacionada con `github.com`**.
+
+   * Esto evitará conflictos si Git intenta usar una cuenta anterior.
+
+---
+
+## ✅ PASO 2: Crear un nuevo repositorio en GitHub
+
+1. Abre tu navegador y entra a [https://github.com](https://github.com).
+
+2. Inicia sesión con tu cuenta (ej: `Daniel7000`).
+
+3. Haz clic en el botón **“+”** (arriba a la derecha) > **“New repository”**.
+
+4. Configura tu nuevo repo:
+
+   * Nombre: `FrontEnd25` (o el que tú quieras)
+   * Opcional: añade README, licencia o `.gitignore`
+   * Haz clic en **“Create repository”**
+
+5. Se mostrará una página con instrucciones como estas:
+
+```bash
+echo "# FrontEnd25" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/TU_USUARIO/FrontEnd25.git
+git push -u origin main
+```
+
+📌 **Guárdala abierta** o copia esos comandos.
+
+---
+
+## ✅ PASO 3: Configurar Git en tu computadora
+
+1. Abre PowerShell o Git Bash.
+
+2. Configura tu nombre de usuario y correo (estos se verán en tus commits):
+
+```bash
+git config --global user.name "Daniel7000"
+git config --global user.email "usuario@tuMail.com"
+```
+
+3. Asegura que Git usará el administrador de credenciales moderno (opcional):
+
+```bash
+git config --global credential.helper manager-core
+```
+
+---
+
+## ✅ PASO 4: Prepara tu proyecto local
+
+1. Crea o abre la carpeta de tu proyecto, por ejemplo:
+
+```bash
+cd F:\FrontEn13ago2025
+mkdir FrontEnd25
+cd FrontEnd25
+```
+
+2. Crea un archivo README inicial:
+
+```bash
+echo "# FrontEnd25" >> README.md
+```
+
+---
+
+## ✅ PASO 5: Ejecuta los comandos que GitHub te dio
+
+Copia y pega los comandos desde GitHub o hazlo paso por paso solo si es la primera vez que usas el repo:
+
+```bash
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/USUARIOgithub/FrontEnd25.git
+git push -u origin main
+```
+
+📌 En el paso del `push`, se abrirá el navegador y verás el mensaje:
+
+> ✅ **"Authentication succeeded"**
+
+---
+
+## ✅ PASO 6: Verifica en GitHub
+
+1. Ve a tu repositorio:
+   👉 [https://github.com/Daniel7000/FrontEnd25](https://github.com/Daniel7000/FrontEnd25)
+
+2. Verifica que aparece el archivo `README.md` y cualquier otro que hayas añadido.
+
+---
+
+## 📝 PASO 7: Subir nuevos cambios más adelante
+
+Cada vez que hagas cambios en tus archivos:
+
+```bash
+git add .
+git commit -m "mensaje del cambio"
+git push
+```
+
+---
+
+## 🎉 ¡Listo!
+
+Tu entorno está completamente configurado:
+
+* Git está enlazado a tu cuenta de GitHub
+* Tu repo está conectado correctamente
+* Puedes subir cambios con solo `git push`
+
+---
+
+
+
+
+
+
+________________
+
+
+
+
+
+Claro, aquí tienes un **protocolo simple y ordenado** para subir tus cambios a GitHub **cada vez que edites archivos en tu proyecto**.
+
+---
+
+# 🚀 Protocolo para subir cambios a GitHub (Post-Edición)
+
+---
+
+## ✅ PASO 1: Guardar los archivos editados
+
+Asegúrate de que todos los archivos estén **guardados** en tu editor (VS Code, etc.) antes de subirlos.
+
+---
+
+## ✅ PASO 2: Abrir la terminal y ubicarse en el proyecto
+
+Abre PowerShell o Git Bash y navega hasta la carpeta del proyecto:
+
+```bash
+cd ruta/a/tu/proyecto
+```
+
+Por ejemplo:
+
+```bash
+cd F:\FrontEn13ago2025\FrontEnd25
+```
+
+---
+
+## ✅ PASO 3: Verifica qué archivos fueron modificados
+
+```bash
+git status
+```
+
+Esto te mostrará:
+
+* Archivos modificados (en rojo)
+* Nuevos archivos no agregados (en rojo)
+* Archivos ya preparados (en verde)
+
+---
+
+## ✅ PASO 4: Añadir los cambios
+
+### Opción A: Añadir todos los archivos modificados
+
+```bash
+git add .
+```
+
+### Opción B: Añadir archivos específicos (si no quieres subir todo)
+
+```bash
+git add archivo1.html archivo2.css
+```
+
+---
+
+## ✅ PASO 5: Hacer un commit con un mensaje descriptivo
+
+```bash
+git commit -m "Descripción corta del cambio"
+```
+
+📝 Ejemplos de mensajes útiles:
+
+```bash
+git commit -m "Agregado navbar responsive"
+git commit -m "Corrección de estilos en footer"
+```
+
+---
+
+## ✅ PASO 6: Subir los cambios al repositorio de GitHub
+
+```bash
+git push
+```
+
+> Si es la primera vez, puedes usar:
+
+```bash
+git push -u origin main
+```
+
+---
+
+## 🔁 Repite este proceso cada vez que hagas cambios en tus archivos.
+
+---
+
+# 🧪 RESUMEN RÁPIDO
+
+```bash
+cd F:/ruta/a/tu/proyecto
+git status
+git add .
+git commit -m "Tu mensaje"
+git push
+```
+
+---
+
+
+
+
+
+
+
+
+
+Excelente pregunta. 🔒
+Si vas a dejar de usar este PC (por ejemplo, en un entorno compartido o público), es **muy importante cerrar tu sesión de GitHub correctamente** para evitar accesos no autorizados y prevenir problemas futuros con otras cuentas.
+
+Aquí tienes un **protocolo completo para cerrar sesión y limpiar toda tu configuración personal de Git y GitHub en Windows**:
+
+---
+
+# 🔐 Protocolo para cerrar sesión de Git/GitHub y eliminar tus credenciales en Windows
+
+---
+
+## ✅ 1. **Eliminar credenciales guardadas de GitHub**
+
+### Opción A: Usando el **Administrador de credenciales de Windows**
+
+1. Pulsa `Inicio` y abre: **Administrador de credenciales**
+2. Ve a: **Credenciales de Windows**
+3. Busca entradas como:
+
+   * `git:https://github.com`
+   * `github.com`
+4. **Elimínalas** todas.
+
+---
+
+### Opción B: Desde la terminal
+
+Ejecuta este comando para eliminar solo la credencial de GitHub:
+
+```bash
+cmdkey /delete:git:https://github.com
+```
+
+---
+
+## ✅ 2. **Borrar la configuración global de Git**
+
+Esto elimina tu nombre y correo de los commits futuros:
+
+```bash
+git config --global --unset user.name
+git config --global --unset user.email
+git config --global --unset credential.helper
+```
+
+📌 Opcional: También puedes ver lo que tenías con:
+
+```bash
+git config --global --list
+```
+
+---
+
+## ✅ 3. **Eliminar tu configuración local (en un repositorio específico)**
+
+Si trabajaste en un proyecto localmente, entra a la carpeta y ejecuta:
+
+```bash
+cd ruta/a/tu/proyecto
+git config --unset user.name
+git config --unset user.email
+```
+
+---
+
+## ✅ 4. **Eliminar el enlace al repositorio remoto**
+
+Desde la carpeta del proyecto, borra el remote origin:
+
+```bash
+git remote remove origin
+```
+
+📌 Esto evita que otros usen accidentalmente tu cuenta para hacer `push`.
+
+---
+
+
+
+---
+
+## ✅ 5. **Cerrar el navegador y eliminar sesiones de GitHub**
+
+
+
+1. Cierra sesión manualmente en GitHub:
+   👉 [https://github.com/logout](https://github.com/logout)
+
+2. Cierra todas las pestañas con sesiones de GitHub.
+
+3. Limpia cookies y sesiones si usaste un navegador compartido.
+
+---
+
+## 🧼 Resultado
+
+Después de esto:
+
+* Ningún usuario podrá hacer `push` a tu repositorio sin volver a iniciar sesión.
+* Tu cuenta no quedará guardada en el sistema.
+* El próximo usuario podrá vincular su propia cuenta sin conflictos.
+
+---
+
+## 📝 Recomendación final
+
+Si este PC lo usará otra persona, puedes dejarle un archivo `README` o una guía escrita con el protocolo de configuración para que no tenga que investigar.
+
+---
+
+¿Quieres que te prepare este protocolo como PDF o archivo de texto para imprimirlo o guardarlo?

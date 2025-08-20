@@ -1,0 +1,324 @@
+
+# 🛠️ GUÍA COMPLETA: Configurar Git con GitHub en Windows
+
+---
+
+## ✅ PASO 1: Limpiar credenciales anteriores (si las hay)
+
+1. Abre el **Administrador de credenciales de Windows**:
+
+   * Pulsa `Inicio` y escribe: `Administrador de credenciales`
+   * Abre la aplicación.
+
+2. Ve a la pestaña **"Credenciales de Windows"**.
+
+3. Busca y **elimina cualquier entrada relacionada con `github.com`**:
+
+   * Como: `git:https://github.com` o `github.com`
+
+✅ Esto evitará conflictos con cuentas anteriores.
+
+---
+
+## ✅ PASO 2: Crear un nuevo repositorio en GitHub
+
+1. Entra a [https://github.com](https://github.com).
+
+2. Inicia sesión con tu cuenta (ej: `Daniel7000`).
+
+3. Haz clic en el botón **“+”** (arriba a la derecha) > **“New repository”**.
+
+4. Configura tu nuevo repo:
+
+   * **Nombre**: `FrontEnd25` (o el que tú prefieras)
+   * Puedes añadir un README, licencia o `.gitignore`
+   * Haz clic en **“Create repository”**
+
+5. Guarda los comandos que se muestran, como:
+
+```bash
+echo "# FrontEnd25" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/TU_USUARIO/FrontEnd25.git
+git push -u origin main
+```
+
+---
+
+## ✅ PASO 3: Configurar Git en tu computadora
+
+1. Abre PowerShell o Git Bash.
+
+2. Configura tu nombre de usuario y correo:
+
+```bash
+git config --global user.name "Daniel7000"
+git config --global user.email "usuario@tuMail.com"
+```
+
+3. Activa el **Administrador de credenciales moderno** (opcional pero recomendado):
+
+```bash
+git config --global credential.helper manager-core
+```
+
+---
+
+## ✅ PASO 4: Prepara tu proyecto local
+
+1. Crea o abre la carpeta del proyecto. Usa rutas completas y evita tildes o espacios en los nombres:
+
+```bash
+cd F:\FrontEnd13ago2025
+mkdir FrontEnd25
+cd FrontEnd25
+```
+
+📌 Si usas WSL o Git Bash, asegúrate de usar rutas del tipo `/mnt/f/FrontEnd13ago2025/FrontEnd25`
+
+2. Crea un archivo README inicial:
+
+```bash
+echo "# FrontEnd25" >> README.md
+```
+
+---
+
+## ✅ PASO 5: Ejecuta los comandos de GitHub
+
+Desde tu carpeta del proyecto:
+
+```bash
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/TU_USUARIO/FrontEnd25.git
+git push -u origin main
+```
+
+> En el paso del `push`, se abrirá tu navegador para autenticarte con tu cuenta.
+
+✅ Si todo va bien, verás: **"Authentication succeeded"**
+
+---
+
+## ✅ PASO 6: Verifica en GitHub
+
+1. Abre tu navegador y entra a:
+
+👉 [https://github.com/Daniel7000/FrontEnd25](https://github.com/Daniel7000/FrontEnd25)
+
+2. Asegúrate de que el `README.md` (y otros archivos) estén visibles.
+
+---
+
+## 📝 PASO 7: Subir cambios en el futuro
+
+Cada vez que edites archivos:
+
+```bash
+git add .
+git commit -m "mensaje del cambio"
+git push
+```
+
+---
+
+## 🎉 ¡Listo!
+
+Tu entorno está correctamente configurado:
+
+✅ Git está enlazado con tu cuenta
+✅ El repositorio remoto está conectado
+✅ Puedes subir cambios fácilmente
+
+---
+
+---
+
+# 🚀 Protocolo para subir cambios a GitHub (Post-Edición)
+
+## ✅ Paso previo: Reiniciar Git si es necesario
+
+Si has cambiado de cuenta o quieres empezar limpio:
+
+
+## Limpiar credenciales anteriores (si las hay)
+
+1. Abre el **Administrador de credenciales de Windows**:
+
+   * Pulsa `Inicio` y escribe: `Administrador de credenciales`
+   * Abre la aplicación.
+
+2. Ve a la pestaña **"Credenciales de Windows"**.
+
+3. Busca y **elimina cualquier entrada relacionada con `github.com`**:
+
+   * Como: `git:https://github.com` o `github.com`
+
+✅ Esto evitará conflictos con cuentas anteriores.
+
+
+
+
+```bash
+git config --global --unset user.name
+git config --global --unset user.email
+
+
+git config --global user.name "TU_NUEVO_USUARIO"
+git config --global user.email "tuemail@ejemplo.com"
+
+```
+
+---
+
+## ✅ PASO 1: Guardar tus archivos editados
+
+Guarda todos los cambios en tu editor antes de continuar.
+
+---
+
+## ✅ PASO 2: Abrir la terminal y ubicarse en la carpeta del proyecto
+
+```bash
+cd F:\FrontEnd13ago2025\FrontEnd25
+```
+
+---
+
+## ✅ PASO 3: Verifica los archivos modificados
+
+```bash
+git status
+```
+
+---
+
+## ✅ PASO 4: Añadir cambios
+
+### Todos los archivos modificados:
+
+```bash
+git add .
+```
+
+### O archivos específicos:
+
+```bash
+git add index.html estilos.css
+```
+
+---
+
+## ✅ PASO 5: Hacer commit
+
+```bash
+git commit -m "Descripción breve del cambio"
+```
+
+Ejemplos útiles:
+
+```bash
+git commit -m "Agregado navbar responsive"
+git commit -m "Actualizado footer"
+```
+
+---
+
+## ✅ PASO 6: Subir los cambios
+
+```bash
+git push
+```
+
+✅ Si es la primera vez, usa:
+
+```bash
+git push -u origin main
+```
+
+---
+
+## 🧪 RESUMEN RÁPIDO
+
+```bash
+cd F:/ruta/a/tu/proyecto
+git status
+git add .
+git commit -m "Tu mensaje"
+git push
+```
+
+---
+
+# 🔐 Protocolo para cerrar sesión de Git/GitHub
+
+## ✅ 1. Eliminar credenciales
+
+### Opción A: Desde el Administrador de credenciales
+
+* Abre el **Administrador de credenciales**
+* Ve a **Credenciales de Windows**
+* Elimina cualquier entrada relacionada con GitHub
+
+### Opción B: Desde la terminal
+
+```bash
+cmdkey /delete:git:https://github.com
+```
+
+---
+
+## ✅ 2. Borrar configuración global de Git
+
+```bash
+git config --global --unset user.name
+git config --global --unset user.email
+git config --global --unset credential.helper
+```
+
+Opcional:
+
+```bash
+git config --global --list
+```
+
+---
+
+## ✅ 3. Borrar configuración local (por proyecto)
+
+```bash
+cd ruta\a\tu\proyecto
+git config --unset user.name
+git config --unset user.email
+```
+
+---
+
+## ✅ 4. Eliminar el repositorio remoto (para evitar pushes accidentales)
+
+```bash
+git remote remove origin
+```
+
+---
+
+## ✅ 5. Cerrar sesión en GitHub
+
+1. Cierra sesión en [https://github.com/logout](https://github.com/logout)
+2. Cierra las pestañas abiertas
+3. Limpia cookies si estás en un equipo compartido
+
+---
+
+## 🧼 Resultado
+
+* Tu cuenta queda totalmente desvinculada del PC.
+* El equipo está listo para ser usado por otra persona sin conflictos.
+
+---
